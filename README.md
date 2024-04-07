@@ -13,21 +13,14 @@ git clone https://github.com/PabloAlanesDev/devathon-quiz-frontend.git
 - Install NPM packages
 
 ```sh
-npm install
+pnpm install
 ```
 
 - Set up the project
 
 ```sh
-npm run dev
+pnpm run dev
 ```
-
-# Built With
-
-    - Vite 5.2.0
-    - Tailwindcss 3.4.3
-    - React 18.2.0
-
 
 # How to Contribute
 

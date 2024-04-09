@@ -19,7 +19,7 @@ const topics = [
 ];
 
 const TopicSelector = () => {
-  const [checkedTopics, setCheckedTopics] = useState([]);
+  const [checkedTopics, setCheckedTopics] = useState<string[]>([]);
 
   const handleTopics = (checked: boolean | string, topic: string) => {
     const newTopics = checked

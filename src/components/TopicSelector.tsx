@@ -22,12 +22,12 @@ const TopicSelector = () => (
     <div className="flex flex-col gap-4 items-start">
       {topics.map((topic) => (
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Checkbox.Root className="CheckboxRoot" id="c1">
+          <Checkbox.Root className="CheckboxRoot" id={topic}>
             <Checkbox.Indicator className="CheckboxIndicator">
               <CheckIcon />
             </Checkbox.Indicator>
           </Checkbox.Root>
-          <label className="Label" htmlFor="c1">
+          <label className="Label" htmlFor={topic}>
             {topic}
           </label>
         </div>

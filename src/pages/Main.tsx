@@ -25,7 +25,7 @@ export default function Main() {
           <img src={DefaultAvatar} width={200} height={200} alt="Main Image" />
           <div className="container mx-auto flex">
             <div className="p-8 flex flex-col md:ml-auto w-full gap-5 ">
-              <div className="relative mb-4">
+              <div className="flex flex-col justify-center  gap-4 mb-4">
                 <label
                   htmlFor="name"
                   className="leading-7 text-sm text-gray-600"
@@ -38,11 +38,15 @@ export default function Main() {
                   name="name"
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
+                <button className="w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  Play
+                </button>
               </div>
-              <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              <hr />
+              <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
                 Create room
               </button>
-              <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
                 Join room
               </button>
             </div>

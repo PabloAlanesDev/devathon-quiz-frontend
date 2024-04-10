@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+import Main from "./pages/Main";
 
 function App() {
   return (
     <div>
-      <Button>Click me</Button>
+      <Main />
     </div>
   );
 }

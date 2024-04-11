@@ -18,61 +18,73 @@ const emptyRooms = [
   {
     id: crypto.randomUUID(),
     name: "Sala Uno",
+    participants: 3,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Dos",
+    participants: 2,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Tres",
+    participants: 3,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Cuatro",
+    participants: 1,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Cinco",
+    participants: 1,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Seis",
+    participants: 2,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Siete",
+    participants: 3,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Ocho",
+    participants: 2,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Nueve",
+    participants: 2,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Diez",
+    participants: 1,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Once",
+    participants: 3,
     tags: ["html", "css", "python", "ruby"],
   },
   {
     id: crypto.randomUUID(),
     name: "Sala Doce",
+    participants: 3,
     tags: ["html", "css", "python", "ruby"],
   },
 ];
@@ -101,10 +113,13 @@ const JoinRoom = () => {
               defaultValue="1"
               columns={{ initial: "1", sm: "3" }}
             >
-              {emptyRooms.map(({ id, name, tags }) => (
+              {emptyRooms.map(({ id, name, tags, participants }) => (
                 <RadioCards.Item value={`${id}`}>
                   <Flex direction="column" gap="2" width="100%">
-                    <Text weight="bold">{name}</Text>
+                    <Flex justify="between">
+                      <Text weight="bold">{name}</Text>
+                      <Text>{participants}/4</Text>
+                    </Flex>
                     <Flex gap="2" wrap="wrap">
                       {tags.map((tag) => (
                         <Badge color="blue">{tag}</Badge>

@@ -1,9 +1,11 @@
-import { Button } from '@/components/ui/button';
+import Main from "./pages/Main";
+import ThemeSwitch from './components/ThemeSwitch';
 
 function App() {
   return (
-    <div>
-      <Button>Click me</Button>
+    <div className='container py-4'>
+      <ThemeSwitch />
+      <Main />
     </div>
   );
 }

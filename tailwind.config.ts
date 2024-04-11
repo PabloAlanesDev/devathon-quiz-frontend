@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
 const config = {
   darkMode: [ "class" ],
@@ -72,7 +73,41 @@ const config = {
       },
     },
   },
-  plugins: [ require("tailwindcss-animate") ],
+  plugins: [ require("tailwindcss-animate"),
+  plugin(function ({ addComponents, }) {
+    addComponents({
+      ".flex-center": {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      ".flex-center-start": {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "start",
+      },
+      ".flex-center-end": {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "end",
+      },
+      ".flex-center-between": {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+      ".scrollbar-thin": {
+        "scrollbar-width": "thin",
+        "scrollbar-color": "hsl(var(--border)) transparent",
+      },
+      ".size-screen": {
+        width: "100vw",
+        height: "100vh",
+      }
+    })
+  })
+
+  ],
 } satisfies Config
 
 export default config

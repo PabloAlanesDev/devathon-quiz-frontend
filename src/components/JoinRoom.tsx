@@ -132,7 +132,10 @@ const JoinRoom = () => {
           </Box>
         </ScrollArea>
 
-        <Button size="3">Join Room</Button>
+        <Flex gap="8" className="m-12">
+          <Button size="3">Back to Home</Button>
+          <Button size="3">Join Room</Button>
+        </Flex>
       </Flex>
     </Container>
   );

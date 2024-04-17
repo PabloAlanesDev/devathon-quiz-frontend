@@ -12,30 +12,32 @@ import { FrameIcon, CopyIcon } from "@radix-ui/react-icons";
 import TopicSelector from "@/components/TopicSelector";
 import { useRef } from "react";
 
-const roomParticipants = [
+import { User } from "../types/types";
+
+const participants: User[] = [
   {
-    username: "Player One",
-    role: "admin",
-    userImage:
-      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    id: "8927857f",
+    name: "Player One",
+    score: 39287,
+    status: "online",
   },
   {
-    username: "Player Two",
-    role: "user",
-    userImage:
-      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    id: "8927857f",
+    name: "Player Two",
+    score: 39287,
+    status: "online",
   },
   {
-    username: "Player Three",
-    role: "user",
-    userImage:
-      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    id: "8927857f",
+    name: "Player Three",
+    score: 39287,
+    status: "online",
   },
   {
-    username: "Player Four",
-    role: "user",
-    userImage:
-      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    id: "8927857f",
+    name: "Player Three",
+    score: 39287,
+    status: "online",
   },
 ];
 
@@ -69,13 +71,13 @@ export default function Main() {
             <Heading>Participants</Heading>
 
             <Flex gap="2">
-              {roomParticipants.map(({ username, userImage }) => (
+              {participants.map(({ name }) => (
                 <Avatar
                   className="-ml-6"
-                  key={username}
+                  key={name}
                   radius="full"
                   size="7"
-                  src={userImage}
+                  src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
                   fallback="A"
                 />
               ))}

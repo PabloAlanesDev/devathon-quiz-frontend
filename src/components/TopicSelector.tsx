@@ -1,6 +1,6 @@
-import { CheckboxGroup, Flex, Heading, Box } from "@radix-ui/themes";
+import { RadioGroup, Flex, Heading, Box } from "@radix-ui/themes";
 
-// TODO: Data to delete when have back data
+// TODO: Mock data delete after
 const topics = ["HTML", "CSS", "Python", "Ruby", "Git", "Sass", "Tailwind"];
 
 const TopicSelector = () => {
@@ -9,13 +9,11 @@ const TopicSelector = () => {
       <Heading align="center">Topic Selector</Heading>
 
       <Box p="4" className="border rounded-lg h-full">
-        <CheckboxGroup.Root size="3">
+        <RadioGroup.Root defaultValue="HTML" name="topics">
           {topics.map((topic) => (
-            <CheckboxGroup.Item value={`${topic}`} key={`${topic}`}>
-              {topic}
-            </CheckboxGroup.Item>
+            <RadioGroup.Item value={topic} key={topic}>{topic}</RadioGroup.Item>
           ))}
-        </CheckboxGroup.Root>
+        </RadioGroup.Root>
       </Box>
     </Flex>
   );

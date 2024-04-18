@@ -5,12 +5,14 @@ import App from "./App.tsx";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CreateRoomPage from "./pages/CreateRoomPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
+  { path: "/create", element: <CreateRoomPage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(

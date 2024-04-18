@@ -89,7 +89,7 @@ const emptyRooms = [
   },
 ];
 
-const JoinRoom = () => {
+const JoinRoomPage = () => {
   return (
     <Container size="2">
       <Flex direction="column" gap="4" align="center">
@@ -141,4 +141,4 @@ const JoinRoom = () => {
   );
 };
 
-export default JoinRoom;
+export default JoinRoomPage;

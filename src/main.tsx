@@ -7,7 +7,7 @@ import "@radix-ui/themes/styles.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateRoomPage from "./pages/CreateRoomPage.tsx";
 import JoinRoomPage from "./pages/JoinRoomPage.tsx";
-import Quizpage from "./pages/quiz/Quizpage.tsx";
+import Quizpage from "./pages/quiz/QuizPage.tsx";
 
 const router = createBrowserRouter([
   {

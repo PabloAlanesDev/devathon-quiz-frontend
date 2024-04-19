@@ -6,6 +6,7 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateRoomPage from "./pages/CreateRoomPage.tsx";
+import JoinRoomPage from "./pages/JoinRoomPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   { path: "/create", element: <CreateRoomPage /> },
+  { path: "/join", element: <JoinRoomPage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(

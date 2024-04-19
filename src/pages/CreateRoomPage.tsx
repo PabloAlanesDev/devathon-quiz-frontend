@@ -83,7 +83,7 @@ export default function CreateRoomPage() {
               <Button size="3">Back to Home</Button>
             </Link>
             <Link to={`/room`}>
-              <Button size="3">Create Room</Button>
+              <Button size="3">Start Quiz</Button>
             </Link>
           </Flex>
         </Flex>

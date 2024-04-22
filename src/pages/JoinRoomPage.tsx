@@ -12,6 +12,7 @@ import {
   Text,
 } from "@radix-ui/themes";
 import { FrameIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
 
 // TODO: Data to delete when have data from back
 const emptyRooms = [
@@ -89,7 +90,7 @@ const emptyRooms = [
   },
 ];
 
-const JoinRoom = () => {
+const JoinRoomPage = () => {
   return (
     <Container size="2">
       <Flex direction="column" gap="4" align="center">
@@ -133,12 +134,16 @@ const JoinRoom = () => {
         </ScrollArea>
 
         <Flex gap="8" className="m-12">
-          <Button size="3">Back to Home</Button>
-          <Button size="3">Join Room</Button>
+          <Link to={`/`}>
+            <Button size="3">Back to Home</Button>
+          </Link>
+          <Link to={`/create`}>
+            <Button size="3">Join Room</Button>
+          </Link>
         </Flex>
       </Flex>
     </Container>
   );
 };
 
-export default JoinRoom;
+export default JoinRoomPage;

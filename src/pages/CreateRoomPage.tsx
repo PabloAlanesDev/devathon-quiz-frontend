@@ -9,6 +9,7 @@ import {
 import { FrameIcon, CopyIcon } from "@radix-ui/react-icons";
 import TopicSelector from "@/components/TopicSelector";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import { User } from "../types/types";
 
@@ -78,8 +79,12 @@ export default function CreateRoomPage() {
           </Flex>
 
           <Flex className="gap-2">
-            <Button size="3">Volver al inicio</Button>
-            <Button size="3">Crear sala de juego</Button>
+            <Link to={`/`}>
+              <Button size="3">Volver al inicio</Button>
+            </Link>
+            <Link to={`/room`}>
+              <Button size="3">Crear sala de juego</Button>
+            </Link>
           </Flex>
         </Flex>
       </div>

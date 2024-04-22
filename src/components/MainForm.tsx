@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DefaultAvatar from "../assets/dafault-avatar.svg";
 import Input from "./ui/Input";
+import { Link } from "react-router-dom";
 
 export default function MainForm() {
   const [username, setUsername] = useState({ name: "" });
@@ -53,12 +54,16 @@ export default function MainForm() {
             </form>
           </div>
           <hr />
-          <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
-            Crear una sala
-          </button>
-          <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
-            UNIRME A UNA SALA
-          </button>
+          <Link to={`create`}>
+            <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white w-full">
+              Crear sala
+            </button>
+          </Link>
+          <Link to={`join`}>
+            <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white w-full">
+              Unirme a una sala
+            </button>
+          </Link>
         </div>
       </div>
     </>

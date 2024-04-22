@@ -52,7 +52,7 @@ export default function CreateRoomPage() {
         <TopicSelector />
 
         <Flex className="flex-col items-center justify-between gap-8">
-          <Heading>Your code room to share</Heading>
+          <Heading>Tu código de sala de juego</Heading>
 
           <TextField.Root>
             <TextField.Slot>
@@ -64,7 +64,7 @@ export default function CreateRoomPage() {
             </Button>
           </TextField.Root>
 
-          <Heading>Participants</Heading>
+          <Heading>Participantes</Heading>
 
           <Flex gap="2">
             {participants.map(({ name }) => (
@@ -80,10 +80,10 @@ export default function CreateRoomPage() {
 
           <Flex className="gap-2">
             <Link to={`/`}>
-              <Button size="3">Back to Home</Button>
+              <Button size="3">Volver al inicio</Button>
             </Link>
             <Link to={`/room`}>
-              <Button size="3">Start Quiz</Button>
+              <Button size="3">Crear sala de juego</Button>
             </Link>
           </Flex>
         </Flex>

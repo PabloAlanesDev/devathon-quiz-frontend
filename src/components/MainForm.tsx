@@ -48,16 +48,16 @@ export default function MainForm() {
                 onChange={onChange}
               />
               <button className="w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Play
+                JUGAR
               </button>
             </form>
           </div>
           <hr />
           <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
-            Create room
+            CREAR SALA
           </button>
           <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white">
-            Join room
+            UNIRME A UNA SALA
           </button>
         </div>
       </div>

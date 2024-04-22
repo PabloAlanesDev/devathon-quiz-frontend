@@ -9,10 +9,10 @@ export default function Instruccions() {
       </div>
       <div className="text-start">
         <ul className="text-xl list-disc">
-          <li>MÍNIMO 4 JUGADORES Y MÁXIMO 2 JUGADORES</li>
-          <li>PREGUNTAS CON OPCIÓN MÚLTIPLE</li>
-          <li>4 PREGUNTAS ALEATORIAS</li>
-          <li>TEMAS DE PROGRAMACIÓN</li>
+          <li>Mínimo 2 jugadores y máximo 4 jugadores</li>
+          <li>Preguntas con opción múltiple</li>
+          <li>Son 4 preguntas aleatorias</li>
+          <li>Temas de programación</li>
         </ul>
       </div>
     </>

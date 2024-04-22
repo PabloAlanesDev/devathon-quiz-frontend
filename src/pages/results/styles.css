@@ -1,0 +1,36 @@
+/*  */
+.finalists .bar {
+  @apply relative
+   after:bg-purple-300 after:absolute after:h-[20px] after:w-full after:-top-[19px] after:inset-x-0;
+}
+.finalists > div:nth-child(1) > .bar {
+  @apply bg-purple-400;
+}
+.finalists > div:nth-child(2) > .bar {
+  @apply bg-gradient-to-t from-purple-400 to-purple-500;
+}
+.finalists > div:nth-child(3) > .bar {
+  @apply bg-purple-400;
+}
+.finalists > div:nth-child(1) > .bar::after {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.finalists > div:nth-child(2) > .bar::after {
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+}
+.finalists > div:nth-child(3) > .bar::after {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
+.finalists .bar-content {
+  @apply text-white font-bold absolute size-full flex-center;
+}
+.finalists > div:nth-child(1) .bar-content {
+  font-size: clamp(1.5rem, 12vw, 8rem);
+}
+.finalists > div:nth-child(2) .bar-content {
+  font-size: clamp(1.5rem, 20vw, 10rem);
+}
+.finalists > div:nth-child(3) .bar-content {
+  font-size: clamp(1.5rem, 12vw, 5rem);
+}

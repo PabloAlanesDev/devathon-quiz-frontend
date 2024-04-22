@@ -11,7 +11,7 @@ export default function User({ name, img }: userPorps) {
     <Flex direction="column" align="center">
       <Avatar src={img || DefaultAvatar} size="6" fallback="A" />
       <Text size="3" weight="medium">
-        {name}
+        {name.charAt(0).toUpperCase()}
       </Text>
     </Flex>
   );

@@ -42,26 +42,26 @@ export default function MainForm() {
           <div className="flex flex-col justify-center gap-4 mb-4">
             <form onSubmit={onSubmit}>
               <Input
-                title="name"
+                title="Name"
                 type="text"
                 name={username.name}
                 error={error}
                 onChange={onChange}
               />
               <button className="w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Play
+                Jugar
               </button>
             </form>
           </div>
           <hr />
           <Link to={`create`}>
             <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white w-full">
-              Create room
+              Crear sala
             </button>
           </Link>
           <Link to={`join`}>
             <button className="py-2 px-6 rounded text-indigo-600 text-lg border border-indigo-600 hover:bg-indigo-600 hover:text-white w-full">
-              Join room
+              Unirme a una sala
             </button>
           </Link>
         </div>

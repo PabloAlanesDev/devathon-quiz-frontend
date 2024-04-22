@@ -29,13 +29,13 @@ const JoinRoomPage = () => {
           fallback="A"
         />
 
-        <TextField.Root placeholder="Insert your code Room">
+        <TextField.Root placeholder="Escribe tu código de sala">
           <TextField.Slot>
             <FrameIcon />
           </TextField.Slot>
         </TextField.Root>
 
-        <Heading>Available rooms</Heading>
+        <Heading>Salas de juego disponibles</Heading>
         <ScrollArea type="always" scrollbars="vertical" style={{ height: 380 }}>
           <Box p="2" pr="8">
             <RadioCards.Root
@@ -59,10 +59,10 @@ const JoinRoomPage = () => {
 
         <Flex gap="8" className="m-12">
           <Link to={`/`}>
-            <Button size="3">Back to home</Button>
+            <Button size="3">Volver al inicio</Button>
           </Link>
           <Link to={`/create`}>
-            <Button size="3">Join room</Button>
+            <Button size="3">Unirse a una sala</Button>
           </Link>
         </Flex>
       </Flex>

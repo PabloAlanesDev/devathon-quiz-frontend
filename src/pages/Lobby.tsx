@@ -17,11 +17,11 @@ export default function Lobby() {
         <User name="User" />
       </Grid>
       <Text size="3" weight="medium">
-        ESPERANDO MÁS JUGADORES...
+        Esperando más jugadores...
       </Text>
       <Flex align="center" justify="between" width="200px" mt="7">
         <Button radius="full" size="3" variant="solid" color="red">
-          SALIR
+          Salir
         </Button>
         <Button
           className="cursor-pointer"
@@ -30,7 +30,7 @@ export default function Lobby() {
           variant="solid"
           color="blue"
         >
-          INICIAR PARTIDA
+          Iniciar partida
         </Button>
       </Flex>
     </Flex>

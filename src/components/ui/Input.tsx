@@ -11,7 +11,7 @@ export default function Input({ title, type, name, error, onChange }: Props) {
     <>
       <div className={`relatives ${error ? "" : "mb-4"}`}>
         <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-          {title.toUpperCase()}
+          {title}
         </label>
         <input
           type={type}

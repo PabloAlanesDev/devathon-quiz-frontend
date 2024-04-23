@@ -6,7 +6,7 @@ const topics = ["HTML", "CSS", "Python", "Ruby", "Git", "Sass", "Tailwind"];
 const TopicSelector = () => {
   return (
     <Flex direction="column" gap="4">
-      <Heading align="center">Topic Selector</Heading>
+      <Heading align="center">Selector de temática</Heading>
 
       <Box p="4" className="border rounded-lg h-full">
         <RadioGroup.Root defaultValue="HTML" name="topics">

@@ -42,7 +42,7 @@ export default function MainForm() {
           <div className="flex flex-col justify-center gap-4 mb-4">
             <form onSubmit={onSubmit}>
               <Input
-                title="Name"
+                title="Nombre"
                 type="text"
                 name={username.name}
                 error={error}

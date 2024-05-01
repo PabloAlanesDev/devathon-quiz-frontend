@@ -1,6 +1,6 @@
-import { useState } from "react";
-import DefaultAvatar from "../assets/dafault-avatar.svg";
+import { useEffect, useState } from "react";
 import Input from "./ui/Input";
+import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 
 export default function MainForm() {
@@ -29,13 +29,25 @@ export default function MainForm() {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const name: string | null = localStorage.getItem("username");
+    name === null && localStorage.setItem("username", username.name);
+    name !== username.name && localStorage.setItem("username", username.name);
+
     alert(username.name);
     setUsername({ name: "" });
   };
 
+  useEffect(() => {
+    const name: string | null = localStorage.getItem("username");
+
+    if (name !== null) {
+      setUsername({ name });
+    }
+  }, []);
+
   return (
     <>
-      <img src={DefaultAvatar} width={200} height={200} alt="Main Image" />
+      <Avatar />
 
       <div className="container mx-auto flex">
         <div className="flex flex-col md:ml-auto w-full gap-5 ">

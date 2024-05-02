@@ -1,28 +1,24 @@
-import { Theme } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.tsx';
-import './globals.css';
-import CreateRoomPage from './pages/CreateRoomPage.tsx';
-import JoinRoomPage from './pages/JoinRoomPage.tsx';
-import Quizpage from './pages/quiz/QuizPage.tsx';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './src_poc/index.css'
+import './src_poc/App.css'
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Home } from './src_poc/pages/Home'
+import { Game } from './src_poc/pages/Game'
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-  { path: '/create', element: <CreateRoomPage /> },
-  { path: '/join', element: <JoinRoomPage /> },
-  { path: '/quiz', element: <Quizpage /> },
+  { path: '/', element: <Home /> },
+  { path: '/room', element: <Game /> },
 ]);
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <Theme>
-      <RouterProvider router={router}></RouterProvider>
-    </Theme>
-  </StrictMode>
-);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
+  </React.StrictMode>,
+)

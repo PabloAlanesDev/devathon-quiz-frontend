@@ -8,48 +8,94 @@ import {
 } from "@radix-ui/themes";
 import { FrameIcon, CopyIcon } from "@radix-ui/react-icons";
 import TopicSelector from "@/components/TopicSelector";
-import { useRef } from "react";
+
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { User } from "../types/types";
-
-// TODO: Mock Data delete after
-const participants: User[] = [
-  {
-    id: "8927857f",
-    name: "Player One",
-    score: 39287,
-    status: "online",
-  },
-  {
-    id: "8927857f",
-    name: "Player Two",
-    score: 39287,
-    status: "online",
-  },
-  {
-    id: "8927857f",
-    name: "Player Three",
-    score: 39287,
-    status: "online",
-  },
-  {
-    id: "8927857f",
-    name: "Player Four",
-    score: 39287,
-    status: "online",
-  },
-];
+const url = "http://localhost:5000/";
 
 export default function CreateRoomPage() {
-  const codeRoom = useRef(null);
+  const [owner, setOwner] = useState({});
+  const [participants, setParticipants] = useState([]);
+  const [room, setRoom] = useState({});
+  const [quiz, setQuiz] = useState({});
+  const [topic, setTopic] = useState();
+
+  const createUser = () => {
+    const endpoint = `${url}api/users`;
+
+    const newUser = {
+      name: localStorage.getItem("username"),
+    };
+
+    fetch(endpoint, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => {
+        try {
+          if (!res.ok)
+            throw new Error(res.statusText || "Something went wrong.");
+          return res.json();
+        } catch (err) {
+          console.log(err);
+        }
+      })
+      .then((data) => setOwner(data));
+  };
+
+  const createRoom = () => {
+    const endpoint = `${url}api/rooms`;
+
+    const room = {
+      owner: owner.name,
+      quiz_id: crypto.randomUUID(),
+      quiz_count: 5,
+    };
+
+    fetch(endpoint, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(room),
+    })
+      .then((res) => {
+        try {
+          if (!res.ok)
+            throw new Error(res.statusText || "Something went wrong.");
+          return res.json();
+        } catch (err) {
+          console.log(err);
+        }
+      })
+      .then((data) => setRoom(data));
+  };
+
+  useEffect(() => {
+    createUser();
+    createRoom();
+  }, []);
 
   const copyRoomCode = () => {};
 
   return (
     <main className="min-h-dvh grid place-content-center p-4">
       <div className="flex flex-col gap-8 md:flex-row">
-        <TopicSelector />
+        <TopicSelector setTopic={setTopic} />
 
         <Flex className="flex-col items-center justify-between gap-8">
           <Heading>Tu código de sala de juego</Heading>
@@ -57,7 +103,7 @@ export default function CreateRoomPage() {
           <TextField.Root>
             <TextField.Slot>
               <FrameIcon />
-              <Text ref={codeRoom}>38DC2D</Text>
+              <Text>{crypto.randomUUID()}</Text>
             </TextField.Slot>
             <Button onClick={copyRoomCode}>
               <CopyIcon />
@@ -67,9 +113,9 @@ export default function CreateRoomPage() {
           <Heading>Participantes</Heading>
 
           <Flex gap="2">
-            {participants.map(({ name }) => (
+            {participants.map(({ name, id }) => (
               <Avatar
-                key={name}
+                key={id}
                 radius="full"
                 size="5"
                 src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
@@ -82,7 +128,7 @@ export default function CreateRoomPage() {
             <Link to={`/`}>
               <Button size="3">Volver al inicio</Button>
             </Link>
-            <Link to={`/room`}>
+            <Link to={`/quiz`}>
               <Button size="3">Crear sala de juego</Button>
             </Link>
           </Flex>

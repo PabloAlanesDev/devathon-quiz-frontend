@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "./ui/Input";
+import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 import DefaultAvatar from "../assets/dafault-avatar.svg";
 
@@ -15,20 +16,33 @@ export default function MainForm() {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    
     if (!pattern.test(form.name) || !pattern.test(form.code)) {
       setError(true);
       return;
     }
+        
+    const name: string | null = localStorage.getItem("username");
+    name === null && localStorage.setItem("username", form.name);
+    name !== username.name && localStorage.setItem("username", form.name);
 
     //Logic to join a room
+        
     setForm({ name: "", code: "" });
     setError(false);
   };
 
+  useEffect(() => {
+    const name: string | null = localStorage.getItem("username");
+
+    if (name !== null) {
+      setUsername({ name });
+    }
+  }, []);
+
   return (
     <>
-      <img src={DefaultAvatar} width={200} height={200} alt="Main Image" />
+      <Avatar />
       <span className="text-sm font-semibold text-red-500">
         {error && "Solo se permiten letras y números"}
       </span>

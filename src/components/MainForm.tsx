@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Input from "./ui/Input";
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
-import DefaultAvatar from "../assets/dafault-avatar.svg";
+// import DefaultAvatar from "../assets/dafault-avatar.svg";
 
 export default function MainForm() {
   const [form, setForm] = useState({ name: "", code: "" });

@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { useState } from "react";
 
-export const SelectTopics = ({ topicsId, setTopicsId, showQuizzes }) => {
+export const SelectTopics = ({handlerStarGame}) => {
+
+  const [topicsId, setTopicsId] = useState([]);
+
   const { data } = useQuery({
     queryKey: ["topics"],
     queryFn: async () => {
@@ -20,6 +24,15 @@ export const SelectTopics = ({ topicsId, setTopicsId, showQuizzes }) => {
       setTopicsId(topicsId.filter((topic) => topic !== event.target.value));
     }
   };
+
+  const handlerSelectTopic = () => {
+    const room_id = localStorage.getItem('room_id')
+    axios.post(`http://localhost:5000/api/rooms/${room_id}/quizzes`, {
+      topics: topicsId
+    }).then(() => {
+      handlerStarGame()
+    })
+  }
 
   if (data) {
     return (
@@ -41,7 +54,7 @@ export const SelectTopics = ({ topicsId, setTopicsId, showQuizzes }) => {
         </ul>
 
         <button
-          onClick={showQuizzes}
+          onClick={(e) => handlerSelectTopic()}
           className="bg-transparent w-full hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
         >
           Confirmar selección

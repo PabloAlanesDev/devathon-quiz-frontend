@@ -61,7 +61,7 @@ export const Room = () => {
       setQuiz(data);
     });
     socket.on("end_game", (data) => setSummary(data));
-    socket.on("disconnect", () => exitRoom());
+    socket.on("disconnect", () => navigate("/"));
   });
 
   return (

@@ -35,7 +35,7 @@ export const SelectQuiz = ({ quiz, handlerQuizSelect }) => {
         onClick={() => handlerQuizSelect(quiz.id, selectResponse)}
         className="w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
       >
-        Selleccionar respuesta
+        Seleccionar respuesta
       </button>
     </div>
   );

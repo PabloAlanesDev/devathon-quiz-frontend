@@ -1,20 +1,19 @@
-import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.tsx";
-import "./globals.css";
-import { Game } from "./pages/Game.tsx";
-
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
+import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// import App from './App.tsx';
+import './globals.css';
+import CreateRoomPage from './pages/CreateRoomPage.tsx';
+import JoinRoomPage from './pages/JoinRoomPage.tsx';
+import Quizpage from './pages/quiz/QuizPage.tsx';
+import WelcomePage from './pages/WelcomePage.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: '/',
+    element: <WelcomePage />,
   },
   { path: "/room", element: <Game /> },
 ]);

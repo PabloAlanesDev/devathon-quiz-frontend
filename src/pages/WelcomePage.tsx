@@ -15,8 +15,8 @@ const WelcomePage = () => {
         <SliderContainer />
       </article>
 
-      <Link to={"/home"}>
-        <button className="bg-transparent hover:bg-teal-600 text-teal-600 font-semibold hover:text-white py-2 px-4 border-2 border-teal-600 mx-4 hover:border-transparent rounded">
+      <Link to={"/home"} className="mx-4">
+        <button className="bg-transparent w-full hover:bg-teal-600 text-teal-600 font-semibold hover:text-white py-2 px-4 border-2 border-teal-600 hover:border-transparent rounded">
           Empezar a jugar
         </button>
       </Link>

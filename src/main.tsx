@@ -15,15 +15,15 @@ const router = createBrowserRouter([
     path: '/',
     element: <WelcomePage />,
   },
-  { path: '/create', element: <CreateRoomPage /> },
-  { path: '/join', element: <JoinRoomPage /> },
-  { path: '/quiz', element: <Quizpage /> },
+  { path: "/room", element: <Game /> },
 ]);
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Theme>
-      <RouterProvider router={router}></RouterProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+      </QueryClientProvider>
     </Theme>
   </StrictMode>
 );

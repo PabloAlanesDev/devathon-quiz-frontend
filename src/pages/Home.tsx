@@ -8,8 +8,8 @@ export const Home = () => {
 
   const navigate = useNavigate();
 
-  const handleChange = (e) => setFname(e.target.value);
-  const handleChangeRoom = (e) => setFroom(e.target.value);
+  const handleChange = (event : React.ChangeEvent<HTMLInputElement> ) => setFname(event.target.value);
+  const handleChangeRoom = (event: React.ChangeEvent<HTMLInputElement>) => setFroom(event.target.value);
 
   const handlerCreateRoom = () => {
     axios
@@ -50,7 +50,7 @@ export const Home = () => {
   return (
     <main className="grid place-content-center min-h-screen ">
       <article>
-        <h1 className="text-7xl text-center font-semibold text-blue-500">
+        <h1 className="text-7xl text-center font-semibold text-teal-600">
           TRICODE
         </h1>
       </article>
@@ -67,13 +67,13 @@ export const Home = () => {
             type="text"
             value={fname}
             onChange={handleChange}
-            className="bg-transparent focus:bg-blue-500 text-blue-700 font-semibold focus:text-white py-2 px-4 border border-blue-500 focus:border-transparent rounded"
+            className="bg-transparent focus:bg-teal-600 text-teal-600 font-semibold focus:text-white py-2 px-4 border border-teal-600 focus:border-transparent rounded"
           />
         </form>
 
         <button
           onClick={handlerCreateRoom}
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          className="bg-transparent hover:bg-teal-600 text-teal-600 font-semibold hover:text-white py-2 px-4 border border-teal-600 hover:border-transparent rounded"
         >
           Crear sala de juego
         </button>
@@ -92,13 +92,13 @@ export const Home = () => {
             type="text"
             value={froom}
             onChange={handleChangeRoom}
-            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+            className="bg-transparent hover:bg-teal-600 text-teal-600 font-semibold hover:text-white py-2 px-4 border border-teal-600 hover:border-transparent rounded"
           />
         </form>
 
         <button
           onClick={handlerJoinRoom}
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          className="bg-transparent hover:bg-teal-600 text-teal-600 font-semibold hover:text-white py-2 px-4 border border-teal-600 hover:border-transparent rounded"
         >
           Unirse a sala de juego
         </button>
